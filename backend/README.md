@@ -9,6 +9,3 @@
  - [Like Objects](https://bitbucket.org/mae5/cse216_aztecs/src/backend/backend/doc/Like.md)
  - [Slack API](https://bitbucket.org/mae5/cse216_aztecs/src/backend/backend/doc/Slack.md)
 
-## Backend Developers
- - (phase1) Buckley Ross <brr322@lehigh.edu>
- - **(current)** William Peracchio <wap221@lehigh.edu>
