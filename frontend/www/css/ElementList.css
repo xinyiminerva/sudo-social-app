@@ -1,0 +1,68 @@
+.ElementList-editbtn {
+	color: darkgoldenrod;
+	-webkit-transition-duration: 0.8s;
+	transition-duration: 0.8s;
+	border-radius: 8px;
+}
+
+.ElementList-editbtn:hover {
+	background-color: darkgoldenrod;
+	color: white;
+}
+
+.ElementList-delbtn {
+	color: rgb(219, 81, 81);
+	-webkit-transition-duration: 0.8s;
+	transition-duration: 0.8s;
+	border-radius: 8px;
+}
+
+.ElementList-delbtn:hover {
+	color: white;
+	background-color: rgb(219, 81, 81);
+}
+
+.ElementList-likebtn, .ElementList-dislikebtn {
+	-webkit-transition-duration: 0.8s;
+	transition-duration: 0.8s;
+	border-radius: 8px;
+}
+
+.ElementList-flagbtn {
+	-webkit-transition-duration: 0.8s;
+	background-color: white;
+	border-radius: 8px;
+	color: red;
+	font-weight: bold;
+}
+
+.ElementList-flagbtn:hover {
+	background-color: red;
+	color: white;
+}
+
+.like {
+	color: #02A0FD;
+}
+
+.liketrue {
+	color: green;
+}
+
+.likefalse {
+	color: darkred;
+}
+
+.ElementList-likebtn:hover, .ElementList-dislikebtn:hover {
+	color: white;
+}
+
+div.panel-heading {
+	text-align: center;
+	font-weight: bold;
+}
+
+.subcomments {
+	border-left: 2px solid;
+	margin-left: 2em;
+}

@@ -1,0 +1,87 @@
+<div class="panel panel-default" id="ElementList">
+	<div class="panel-heading">
+		{{#if parent}}
+			<h3 class="panel-title">Comments (#{{parent.id}})</h3>
+		{{else}}
+			<h3 class="panel-title">All Messages</h3>
+		{{/if}}
+	</div>
+	{{#if parent}}
+		<button class="ElementList-parentbtn" data-id="{{parent.parent_id}}">&larr;</button>...
+		<table class="table header">
+			<tbody>
+				<tr>
+					<td class="ElementList-user" data-id="{{parent.author_id}}">User #{{parent.author_id}}</td>
+					<td>
+						<p>{{{parent.message}}}</p>
+						<br/>
+						{{#each parent.attachments}}
+							<br/>
+							<a href="https://cse216aztecs.herokuapp.com/api/attachments/{{this}}" target="_blank">
+								<img alt="PDF" height="100px" src="https://cse216aztecs.herokuapp.com/api/attachments/{{this}}"/>
+							</a>
+						{{/each}}
+					</td>
+					<td>
+						{{#if_eq uid parent.author_id}}
+							<button class="ElementList-editbtn" data-id="{{parent.id}}">Edit</button>
+						{{/if_eq}}
+					</td>
+					<td>
+						{{#if_eq uid parent.author_id}}
+							<button class="ElementList-delbtn" data-id="{{parent.id}}">Delete</button>
+						{{/if_eq}}
+					</td>
+					<td>
+						<div class="like{{parent.liked}}">
+							<button class="ElementList-likebtn" data-id="{{parent.id}}" data-liked="{{parent.liked}}">&uarr;</button>
+							Likes: {{parent.likes}}
+							<button class="ElementList-dislikebtn" data-id="{{parent.id}}" data-liked="{{parent.liked}}">&darr;</button>
+						</div>
+					</td>
+					<td>
+						<button class="ElementList-flagbtn" data-id="{{parent.id}}">Flag Post</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	{{/if}}
+	<table class="table{{#if parent}} subcomments{{/if}}">
+		<tbody>
+			{{#each mData}}
+				<tr>
+					<td class="ElementList-user" data-id="{{this.author_id}}">User #{{this.author_id}} </td>
+					<td class="ElementList-comment" data-id="{{this.id}}">{{{this.message}}}
+						<br/>
+						{{#each this.attachments}}
+							<br/>
+							<a href="https://cse216aztecs.herokuapp.com/api/attachments/{{this}}" target="_blank">
+								<img alt="PDF" height="100px" src="https://cse216aztecs.herokuapp.com/api/attachments/{{this}}"/>
+							</a>
+						{{/each}}
+					</td>
+					<td>
+						{{#if_eq ../uid this.author_id}}
+							<button class="ElementList-editbtn" data-id="{{this.id}}">Edit</button>
+						{{/if_eq}}
+					</td>
+					<td>
+						{{#if_eq ../uid this.author_id}}
+							<button class="ElementList-delbtn" data-id="{{this.id}}">Delete</button>
+						{{/if_eq}}
+					</td>
+					<td>
+						<div class="like{{this.liked}}">
+							<button class="ElementList-likebtn" data-id="{{this.id}}" data-liked="{{this.liked}}">&uarr;</button>
+							Likes: {{this.likes}}
+							<button class="ElementList-dislikebtn" data-id="{{this.id}}" data-liked="{{this.liked}}">&darr;</button>
+						</div>
+					</td>
+					<td>
+						Comments: {{this.comments}}
+					</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div>

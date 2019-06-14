@@ -1,0 +1,26 @@
+<div id="UserProfile" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">User: {{target.name}}</h4>
+            </div>
+            {{#if_eq target.id uid}}
+              <form class="modal-body">
+                <label for="Bio">Bio</labal>
+                <input class="form-control" id="UserProfile-bio" type="text"></input>
+              </form>
+            {{else}}
+              <div class="modal-body">
+                <h2>Bio</h2>
+                <p>{{target.bio}}</p>
+              </div>
+            {{/if_eq}}
+            <div class="modal-footer">
+                {{#if_eq target.id uid}}
+                  <button type="button" class="btn btn-default" id="UserProfile-Update">Update</button>
+                {{/if_eq}}
+                <button type="button" class="btn btn-default" id="UserProfile-Close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
