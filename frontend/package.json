@@ -23,7 +23,7 @@
 		"cordova-android": "^8.0.0",
 		"cordova-browser": "^6.0.0",
 		"cordova-plugin-googleplus": "7.0.1",
-		"jquery": "^3.4.0",
+		"jquery": "^3.5.0",
 		"js-cookie": "^2.2.0"
 	},
 	"cordova": {
